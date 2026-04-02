@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block css_adicional %}
+<link rel="stylesheet" href="/static/src/css/pagina2.css">
+{% endblock %}
+
+{% block conteudo %}
+
+<main class="product-detail">
+    <div class="product-detail__container">
+      
+      <div class="product-gallery">
+        <div class="product-gallery__main-wrapper">
+          <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Classic Dev" class="product-gallery__main-img" id="main-product-image">
+        </div>
+        <div class="product-gallery__thumbs">
+          <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Classic Dev Vista 1" class="thumb active" onclick="changeImage(this.src)">
+          <img src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Classic Dev Vista 2" class="thumb" onclick="changeImage(this.src)">
+          <img src="https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Classic Dev Vista 3" class="thumb" onclick="changeImage(this.src)">
+        </div>
+      </div>
+  
+      <div class="product-info">
+        <a href="/menu" class="product-info__back">
+          <span class="material-symbols-outlined">arrow_back</span> Voltar ao Menu
+        </a>
+        
+        <h1 class="product-info__title">Classic Dev</h1>
+        <p class="product-info__description">
+          Nosso campeão de vendas! O Classic Dev traz a combinação perfeita de um pão brioche selado na manteiga, carne suculenta de 180g (blend especial da casa) e muito queijo cheddar derretido. Simples, direto e funcional.
+        </p>
+  
+        <div class="product-info__price-wrapper">
+          <span class="product-info__price">R$ 25,00</span>
+        </div>
+  
+        <hr class="divider">
+  
+        <div class="product-custom">
+          <h3 class="product-custom__title">Turbine seu código (Adicionais)</h3>
+          
+          <div class="custom-option">
+            <div class="custom-option__details">
+              <span class="custom-option__name">Bacon Crocante (+ R$ 4,00)</span>
+            </div>
+            <input type="checkbox" id="add-bacon" class="custom-option__checkbox">
+          </div>
+  
+          <div class="custom-option">
+            <div class="custom-option__details">
+              <span class="custom-option__name">Cebola Caramelizada (+ R$ 3,00)</span>
+            </div>
+            <input type="checkbox" id="add-cebola" class="custom-option__checkbox">
+          </div>
+  
+          <div class="custom-option">
+            <div class="custom-option__details">
+              <span class="custom-option__name">Molho Especial Extra (+ R$ 2,00)</span>
+            </div>
+            <input type="checkbox" id="add-molho" class="custom-option__checkbox">
+          </div>
+        </div>
+  
+        <hr class="divider">
+  
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <button class="qty-btn" onclick="decreaseQty()">-</button>
+            <input type="number" id="quantity" value="1" min="1" readonly>
+            <button class="qty-btn" onclick="increaseQty()">+</button>
+          </div>
+          <button class="button button--primary button--large">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+  
+    </div>
+  </main>
+
+{% endblock %}

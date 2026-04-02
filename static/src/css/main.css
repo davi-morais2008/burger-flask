@@ -1,0 +1,289 @@
+/* HEADER- Camila */
+
+
+.header{
+    padding: 20px;
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: center;
+    font-family: Roboto;
+    font-family: 1.2rem;
+
+}
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+}
+
+.header__logo{
+    color: var(--primary-red);
+    font-family: "Oswald";
+    font-size: 1.7rem;
+}
+
+.header__menu{
+    display: flex;
+    gap: 20px;
+}
+
+.header__link{
+    margin-left: 10px;
+    color: var(--text-gray);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+
+}
+
+.header__toggle{
+    display: none;
+}
+
+
+
+/* BANNER- Cauã Gustavo */
+
+.banner{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.664)),url(https://images.pexels.com/photos/24245659/pexels-photo-24245659.jpeg);
+    background-size: 100%;
+    background-position-y:105vh;
+    text-align: center;
+    color: var(--text-light);
+    
+}
+
+.banner__title{
+    font-family: Oswald;
+    font-size: 4rem;
+    line-height: 100px;
+    transition:0.6s;
+    cursor: pointer;
+    
+}
+
+.banner__title:hover{
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.438);
+    letter-spacing: 10px;
+    font-size: 5rem;
+
+}
+
+.banner__title--highlight{
+    color: var(--primary-red);
+}
+
+.banner__subtitle{
+    font-size: 1.3rem;
+    font-family: Roboto;
+}
+
+/* ESCOLHA- Davi */
+
+.categories{
+
+    /* background-color: rgb(252, 0, 0); */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+
+}
+
+
+.categories__title{
+    
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.categories__list{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-item{
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 200px;
+    height: 250px;
+    border: 1px solid rgb(215, 214, 214);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover{
+    transform: scale(1.1);
+    border: 1px solid var(--primary-red);
+}
+
+.category-item__img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.button--small{
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: var(--primary-orange);
+    border-radius: 10px;
+    padding: 6px;
+    transition: color 1.5 ease-in-out;
+
+}
+
+/* PRODUTOS- Fernando */
+
+
+.products{
+    background-color: var(--bg-gray-light);
+}
+
+.products__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 50px;
+
+}
+
+.products__title, .categories__title{
+    font-family:'Oswald';
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-dark-blue);
+
+}
+
+.products__grid{
+    display: grid;
+    max-width: 1250px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 50px;
+    
+
+}
+
+.card{
+    box-shadow: 0 1px 10px rgba(74, 74, 74, 0.2);
+    height: 480px;
+    display: flex;
+    border-radius: 6px;
+    flex-direction: column;
+    margin: 15px;
+    background-color: var(--bg-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover{
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card__image-wrapper{
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    height: 50%;
+
+
+}
+
+.card__image-wrapper > .card__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+.card__body{
+    border-radius: 15px;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 30px;
+}
+
+.card__title{
+    width: 100%;
+    font-family: "Oswald";
+    font-size: 1.7rem;
+    color: var(--text-dark-blue);
+}
+
+.card__description{
+    font-family: Roboto;
+    font-size: 1.1rem;
+
+}
+
+.card__footer{
+    border-top: 3px gray solid;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+
+}
+
+.card__price{
+    font-size: 1.4rem;
+    font-family: "Roboto";
+    font-weight: 600;
+    color: rgb(252, 65, 65);
+    width: 100%;
+}
+
+.button{
+    font-family: "Roboto";
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+
+}
+
+.button--small{
+    font-size: 1rem;
+    padding: 5px 20px;
+    background-color: var(--accent-light-orange);
+}
+
+.button--primary{
+    background-color: var(--primary-red);
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+
+/* FOOTER- Camila */
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-blue);
+    padding: 40px;
+}
+
+.footer__text{
+    font-size: 10px;
+    color: var(--text-light);
+    text-align: center;
+}
