@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS db_burguers;
-USE db_burgers;
+USE db_burguers;
 
 CREATE TABLE IF NOT EXISTS burguer(
 codigo INT PRIMARY KEY auto_increment,

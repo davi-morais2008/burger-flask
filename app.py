@@ -12,6 +12,9 @@ def page_home():
 def page_2():
     return render_template("produto.html")
 
-@app.route("/produto/<cod>")
+@app.route("/produto/<id>")
+def page_product(id):
+    produto = recuperar_produtos(id)
+    return render_template("produto.html", produto = produto)
 
 app.run(host='0.0.0.0', port=8080, debug=True)

@@ -12,27 +12,27 @@
       
       <div class="product-gallery">
         <div class="product-gallery__main-wrapper">
-          <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Classic Dev" class="product-gallery__main-img" id="main-product-image">
+          <img src="{{produto.foto}}" alt="Classic Dev" class="product-gallery__main-img" id="main-product-image">
         </div>
         <div class="product-gallery__thumbs">
-          <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Classic Dev Vista 1" class="thumb active" onclick="changeImage(this.src)">
-          <img src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Classic Dev Vista 2" class="thumb" onclick="changeImage(this.src)">
-          <img src="https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Classic Dev Vista 3" class="thumb" onclick="changeImage(this.src)">
+          <img src="{{produto.foto}}" alt="Classic Dev Vista 1" class="thumb active" onclick="changeImage(this.src)">
+          <img src="{{produto.foto}}" alt="Classic Dev Vista 2" class="thumb" onclick="changeImage(this.src)">
+          <img src="{{produto.foto}}" alt="Classic Dev Vista 3" class="thumb" onclick="changeImage(this.src)">
         </div>
       </div>
   
       <div class="product-info">
-        <a href="/menu" class="product-info__back">
+        <a href="/" class="product-info__back">
           <span class="material-symbols-outlined">arrow_back</span> Voltar ao Menu
         </a>
         
-        <h1 class="product-info__title">Classic Dev</h1>
+        <h1 class="product-info__title">{{produto.produto}}</h1>
         <p class="product-info__description">
-          Nosso campeão de vendas! O Classic Dev traz a combinação perfeita de um pão brioche selado na manteiga, carne suculenta de 180g (blend especial da casa) e muito queijo cheddar derretido. Simples, direto e funcional.
+          {{produto.descricao}}
         </p>
   
         <div class="product-info__price-wrapper">
-          <span class="product-info__price">R$ 25,00</span>
+          <span class="product-info__price">{{produto.preco}}</span>
         </div>
   
         <hr class="divider">
