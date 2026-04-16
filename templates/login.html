@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block css_adicional %}
+<link rel="stylesheet" href="/static/src/css/pagina2.css">
+
+<style>
+
+/* CENTRALIZAÇÃO TOTAL DA TELA */
+
+.product-detail__container {
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;     /* centraliza vertical */
+}
+
+.product-info {
+    margin: 0 auto;          /* garante centralização */
+    width: 100%;
+    max-width: 420px;
+}
+
+.product-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Container do formulário */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Labels com fonte aplicada */
+.label-custom {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Inputs estilizados */
+.input-custom {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-custom:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 6px rgba(230,57,70,0.4);
+}
+
+/* Espaçamento */
+.field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Botão largura total */
+.button-full {
+    width: 100%;
+}
+
+/* Texto inferior */
+.link-text {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+</style>
+
+{% endblock %}
+
+{% block conteudo %}
+
+<main class="product-detail">
+
+  <div class="product-detail__container" style="justify-content: center;">
+
+    <div class="product-info form-container" style="max-width: 420px;">
+
+      <a href="/" class="product-info__back">
+        <span class="material-symbols-outlined">arrow_back</span> Voltar
+      </a>
+
+      <h1 class="product-info__title" style="text-align: center;">
+        Entrar
+      </h1>
+
+      <form method="POST" action="/login" style="width: 100%;">
+
+        <div class="field">
+          <label class="label-custom">Email</label>
+          <input class="input-custom" type="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="field">
+          <label class="label-custom">Senha</label>
+          <input class="input-custom" type="password" name="senha" placeholder="••••••••" required>
+        </div>
+
+        <div class="product-actions" style="margin-top: 20px;">
+          <button type="submit" class="button button--primary button--large button-full">
+            Entrar
+          </button>
+        </div>
+
+      </form>
+
+      <hr class="divider">
+
+      <p class="link-text">
+        Não tem conta?
+        <a href="/cadastro" style="color: #4ea8de;">Criar agora</a>
+      </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

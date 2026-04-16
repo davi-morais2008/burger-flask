@@ -17,4 +17,12 @@ def page_product(id):
     produto = recuperar_produtos(id)
     return render_template("produto.html", produto = produto)
 
+@app.route("/cadastro")
+def page_signup():
+    return render_template("cadastro.html")
+
+@app.route("/login")
+def page_login():
+    return render_template("login.html")
+
 app.run(host='0.0.0.0', port=8080, debug=True)

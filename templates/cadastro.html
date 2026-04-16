@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block css_adicional %}
+<link rel="stylesheet" href="/static/src/css/pagina2.css">
+
+<style>
+/* Centralização */
+.product-detail__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Inputs maiores e bonitos */
+.input-custom {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-custom:focus {
+    border-color: #4ea8de;
+    box-shadow: 0 0 5px rgba(78,168,222,0.5);
+}
+
+/* Labels mais elegantes */
+.label-custom {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Espaçamento dos campos */
+.field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Botão full width */
+.button-full {
+    width: 100%;
+}
+
+/* Texto inferior */
+.link-text {
+    text-align: center;
+    margin-top: 10px;
+}
+</style>
+
+{% endblock %}
+
+{% block conteudo %}
+
+<main class="product-detail">
+  <div class="product-detail__container" style="justify-content: center;">
+
+    <div class="product-info form-container" style="max-width: 400px; width: 100%;">
+
+      <a href="/" class="product-info__back">
+        <span class="material-symbols-outlined">arrow_back</span> Voltar
+      </a>
+
+      <h1 class="product-info__title" style="text-align: center;">Criar Conta</h1>
+
+      <form method="POST" action="/cadastro" style="width: 100%;">
+
+        <div class="field">
+          <label class="label-custom">Nome</label>
+          <input class="input-custom" type="text" name="nome" placeholder="Seu nome" required>
+        </div>
+
+        <div class="field">
+          <label class="label-custom">Senha</label>
+          <input class="input-custom" type="password" name="senha" placeholder="••••••••" required>
+        </div>
+
+
+        <div class="product-actions" style="margin-top: 20px;">
+          <button type="submit" class="button button--primary button--large button-full">
+            Criar Conta
+          </button>
+        </div>
+
+      </form>
+
+      <hr class="divider">
+
+      <p class="link-text">
+        Já possui cadastro?
+        <a href="/login" style="color: #4ea8de;">Faça login</a>
+      </p>
+
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}
