@@ -1,8 +1,10 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, session
 from model.produto import recuperar_produtos
 from model.usuario import cadastrar, login
 
 app = Flask(__name__)
+
+app.secret_key = 'megamats'
 
 @app.route("/")
 def page_home():
@@ -29,6 +31,7 @@ def cadastro_post():
     senha = request.form.get("senha")
     
     if cadastrar(user, senha):
+        session['usuario_logado'] = user
         return redirect("/")
     else:
         return redirect("/cadastro")
@@ -43,8 +46,14 @@ def login_post():
     senha = request.form.get("senha")
     
     if login(user, senha):
+        session['usuario_logado'] = user
         return redirect("/")
     else:
         return redirect("/login")
+    
+@app.route("/logout")
+def deslogar():
+    session.clear()
+    return redirect("/")
 
 app.run(host='0.0.0.0', port=8080, debug=True)

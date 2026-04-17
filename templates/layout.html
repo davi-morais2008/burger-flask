@@ -48,19 +48,26 @@
           </ul>
         </nav>
 
-        <div class="header__social">
-          <a href="#" class="header__icon"
-            ><span class="material-symbols-outlined">thumb_up</span></a
-          >
-          <a href="#" class="header__icon"
-            ><span class="material-symbols-outlined">photo_camera</span></a
-          >
-        </div>
+       
         
+        {% if request.path != '/login' and request.path != '/cadastro' %}
         <div class="header__auth">
+          {% if session['usuario_logado'] %}
+          <div class="header__user">
+            <a href="/perfil" class="header__user-btn">
+              <span class="material-symbols-outlined">account_circle</span>
+              <span>{{session['usuario_logado']}}</span>
+            </a>
+
+            <a href="/logout" class="header__logout-btn">
+              Sair
+            </a>
+          </div>
+          {% else %}
           <a href="/login" class="header__btn header__btn--login">Entrar</a>
-          <a href="/cadastro" class="header__btn header__btn--signup">Cadastrar</a>
+          {% endif %}
         </div>
+        {% endif %}
 
         <button class="header__toggle">
           <span class="material-symbols-outlined">menu</span>

@@ -287,3 +287,81 @@
     color: var(--text-light);
     text-align: center;
 }
+
+.header__auth {
+  display: flex;
+  gap: 12px;
+}
+
+/* Base dos botões LOGIN*/
+.header__btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Botão Entrar (outline elegante) */
+.header__btn--login {
+  color: #ff7a00;
+  border: 2px solid #ff7a00;
+  background: transparent;
+}
+
+.header__btn--login:hover {
+  background: #ff7a00;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 122, 0, 0.3);
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botão do usuário */
+.header__user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ff7a00; /* laranja */
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.header__user-btn i {
+  font-size: 18px;
+}
+
+.header__user-btn:hover {
+  background-color: #e66a00;
+  transform: scale(1.05);
+}
+
+/* Botão logout */
+.header__logout-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 2px solid #ff7a00;
+  background-color: #fff;
+  color: #ff7a00;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  width: 90px;
+  text-align: center;
+}
+
+.header__logout-btn:hover {
+  background-color: #ff7a00;
+  color: #fff;
+}

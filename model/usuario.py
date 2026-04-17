@@ -17,7 +17,11 @@ def login(user, senha):
     cursor.execute("SELECT username, senha FROM usuario WHERE username = %s", (user,))
     resultado = cursor.fetchone()
 
-    if resultado['senha']  == senha:
+    if resultado is None:
+        return False
+
+    if resultado['username'] == user and resultado['senha']  == senha:
         return True
+    else:
+        return False
     
-    return False
