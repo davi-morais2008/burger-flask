@@ -52,6 +52,12 @@
         
         {% if request.path != '/login' and request.path != '/cadastro' %}
         <div class="header__auth">
+          
+          <span class="material-symbols-outlined carrinho_icon">
+            shopping_cart
+          </span>
+
+
           {% if session['usuario_logado'] %}
           <div class="header__user">
             <a href="/perfil" class="header__user-btn">

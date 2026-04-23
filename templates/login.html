@@ -75,8 +75,35 @@
 /* Texto inferior */
 .link-text {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     font-family: 'Poppins', sans-serif;
+}
+
+
+/* Estilização dos Alertas (Jinja2) */
+.alert {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid transparent;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Variante de Erro/Perigo */
+.alert-danger {
+    color: #d90429;
+    font-size: 16px;
+}
+
+/* Animação suave para o erro não "brotar" do nada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 </style>
@@ -119,7 +146,15 @@
 
       </form>
 
-      <hr class="divider">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
 
       <p class="link-text">
         Não tem conta?

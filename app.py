@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, session
+from flask import Flask, render_template, redirect, request, session, flash
 from model.produto import recuperar_produtos
 from model.usuario import cadastrar, login
 
@@ -34,6 +34,7 @@ def cadastro_post():
         session['usuario_logado'] = user
         return redirect("/")
     else:
+        flash("Usuário já existe.", "danger")
         return redirect("/cadastro")
     
 @app.route("/login")
@@ -49,6 +50,7 @@ def login_post():
         session['usuario_logado'] = user
         return redirect("/")
     else:
+        flash("Usuário ou senha incorretos.", "danger")
         return redirect("/login")
     
 @app.route("/logout")
