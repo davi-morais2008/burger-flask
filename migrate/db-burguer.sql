@@ -2,20 +2,37 @@ CREATE DATABASE IF NOT EXISTS db_burguers;
 USE db_burguers;
 
 CREATE TABLE IF NOT EXISTS burguer(
-codigo INT PRIMARY KEY auto_increment,
-produto VARCHAR(50),
-descricao VARCHAR (100),
-preco DOUBLE(7,2),
-destaque BOOL default 0,
-foto VARCHAR(200),
-disponibilidade BOOL default 1
+    codigo INT PRIMARY KEY AUTO_INCREMENT,
+    produto VARCHAR(50),
+    descricao VARCHAR(100),
+    preco DOUBLE(7,2),
+    destaque BOOL DEFAULT 0,
+    foto VARCHAR(200),
+    disponibilidade BOOL DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS usuario (
-codigo INT  PRIMARY KEY auto_increment,
-username VARCHAR(50) UNIQUE,
-senha VARCHAR(200)
+    codigo INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE,
+    senha VARCHAR(200) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS carrinho (
+    codigo INT PRIMARY KEY AUTO_INCREMENT,
+    usuario VARCHAR(50), 
+    finalizado BOOL DEFAULT 0,
+    CONSTRAINT fk_carrinho_usuario FOREIGN KEY (usuario) REFERENCES usuario(username)
+);
+
+CREATE TABLE IF NOT EXISTS itens_carrinho (
+    codigo INT PRIMARY KEY AUTO_INCREMENT,
+    cod_carrinho INT,
+    cod_burguer INT,
+    quantidade INT,
+    CONSTRAINT fk_itens_carrinho FOREIGN KEY (cod_carrinho) REFERENCES carrinho(codigo),
+    CONSTRAINT fk_itens_carrinho_burguer FOREIGN KEY (cod_burguer) REFERENCES burguer(codigo)
+);
+
 
 INSERT INTO burguer (produto, descricao, preco, foto) 
 VALUES ("Classic DEV", "Pão brioche, carne suculenta e queijo derretido", 25.00, "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600"),

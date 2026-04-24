@@ -1,3 +1,18 @@
+const carrinho = document.getElementById('cart-sidebar');
+const btnFechar = document.getElementById('close-cart');
+const btnAbrir = document.getElementById('cart');
+
+// Função para abrir
+btnAbrir.addEventListener('click', () => {
+    carrinho.classList.add('carrinho-aberto');
+});
+
+// Função para fechar
+btnFechar.addEventListener('click', () => {
+    carrinho.classList.remove('carrinho-aberto');
+});
+
+
 async function mostrarCarrinho() {
     const resposta = await fetch("http://10.110.134.2:8080/api/get/carrinho")
 
