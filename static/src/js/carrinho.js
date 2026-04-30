@@ -1,4 +1,4 @@
-const carrinho = document.getElementById('cart-sidebar');
+const carrinho = document.getElementById('shopping-cart');
 const btnFechar = document.getElementById('close-cart');
 const btnAbrir = document.getElementById('cart');
 
@@ -12,34 +12,40 @@ btnFechar.addEventListener('click', () => {
     carrinho.classList.remove('carrinho-aberto');
 });
 
-
-async function mostrarCarrinho() {
+async function  carregarCarrinho() {
     const resposta = await fetch("http://10.110.134.2:8080/api/get/carrinho")
 
     if (!resposta.ok){
-        alert('ERRO AO CARREGAR CARRINHO!')
-    } else {
+        alert("ERRO AO CARREGAR CARRINHO!")
+    }
+    else{
         const dados = await resposta.json()
 
-        const carrinho = document.getElementById('carrinho')
+        console.log(dados
+        )
 
-        carrinho.innerHTML = '';
+        const carrinho = document.getElementById('carrinho')
+        const p = document.querySelector('.cart-total__value')
+
+        carrinho.innerHTML = ''
+
+        let precoTotal = 0
 
         for (let dado of dados){
-            let linha = `
-            <div class="cart-item" >
-                <div class="cart-item__info" >
+            let linha =  `
+            <div class="cart-item">
+                <div class="cart-item__info">
                     <p class="cart-item__name">${dado.nome}</p>
-                    <p class="cart-item__price">${dado.preco}</p>
+                    <p class="cart-item__price">R$ ${dado.preco}</p>
                 </div>
-                <span class="material-symbols-outlined">
-                    delete
-                </span>
+                <button class="cart-item__remove">Remover</button>
             </div>
             `
             carrinho.innerHTML += linha
+            precoTotal += dado.preco
         }
-    }
+        p.textContent = 'R$ ' + precoTotal
+    }   
 }
 
-mostrarCarrinho();
+carregarCarrinho()

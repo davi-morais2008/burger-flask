@@ -374,18 +374,31 @@
     right: 0;
     width: 400px;
     height: 100vh;
-    background-color: var(--bg-white);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-light);
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    border-left: 4px solid #359b70;
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    border-left: 4px solid var(--primary-red);
+}
+
+.carrinho_icon{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: #ff7a00;
+    cursor: pointer;
+}
+
+.carrinho-aberto {
+    transform: translateX(0);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .cart-sidebar__header {
     padding: 24px;
-    background-color: var(--primary-red);
+    background-color: var(--primary-blue);
     color: var(--text-light);
     display: flex;
     justify-content: space-between;
@@ -427,7 +440,6 @@
     border-radius: 8px;
 }
 
-
 .cart-item__name {
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
@@ -452,7 +464,8 @@
 .cart-sidebar__footer {
     padding: 24px;
     border-top: 2px solid #eee;
-    background-color: var(--bg-light);
+    color: var(--text-light);
+    background-color: var(--primary-blue);
 }
 
 .cart-total {
@@ -474,25 +487,26 @@
     letter-spacing: 1px;
 }
 
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: var(--bg-light);
+    color: var(--primary-blue);
+    font-weight: 600;
+    border-radius: 8px; /* Arredondado igual ao botão */
+    border: 1px solid rgba(43, 127, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.user:hover {
+    background-color: #e8efff;
+    transform: translateY(-1px);
+}
+
 /* Responsividade: Em telas pequenas, o carrinho ocupa quase tudo */
 @media (max-width: 480px) {
     .cart-sidebar {
         width: 100%;
-    }
-}
-
-
-.carrinho_icon{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #e66a00;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    font-size: 30px;
-}
-
-.carrinho_icon:hover{
-    color: #e66a00;
-    transform: scale(1.1);
-}
+    }}
