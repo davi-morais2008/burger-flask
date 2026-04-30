@@ -1,18 +1,18 @@
-const carrinho = document.getElementById('shopping-cart');
+const carrinhoLateral = document.getElementById('shopping-cart');
 const btnFechar = document.getElementById('close-cart');
 const btnAbrir = document.getElementById('cart');
 
 // Função para abrir
 btnAbrir.addEventListener('click', () => {
-    carrinho.classList.add('carrinho-aberto');
+    carrinhoLateral.classList.add('carrinho-aberto');
 });
 
 // Função para fechar
 btnFechar.addEventListener('click', () => {
-    carrinho.classList.remove('carrinho-aberto');
+    carrinhoLateral.classList.remove('carrinho-aberto');
 });
 
-async function  carregarCarrinho() {
+async function carregarCarrinho() {
     const resposta = await fetch("http://127.0.0.1:8080/api/get/carrinho")
 
     if (!resposta.ok){
@@ -21,13 +21,10 @@ async function  carregarCarrinho() {
     else{
         const dados = await resposta.json()
 
-        console.log(dados
-        )
-
-        const carrinho = document.getElementById('carrinho')
+        const banner = document.getElementById('carrinho')
         const p = document.querySelector('.cart-total__value')
 
-        carrinho.innerHTML = ''
+        banner.innerHTML = ''
 
         let precoTotal = 0
 
@@ -41,7 +38,7 @@ async function  carregarCarrinho() {
                 <button class="cart-item__remove">Remover</button>
             </div>
             `
-            carrinho.innerHTML += linha
+            banner.innerHTML += linha
             precoTotal += dado.preco
         }
         p.textContent = 'R$ ' + precoTotal

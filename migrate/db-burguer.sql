@@ -12,8 +12,7 @@ CREATE TABLE IF NOT EXISTS burguer(
 );
 
 CREATE TABLE IF NOT EXISTS usuario (
-    codigo INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) UNIQUE,
+    username VARCHAR(50) PRIMARY KEY UNIQUE,
     senha VARCHAR(200) NOT NULL
 );
 
@@ -42,5 +41,23 @@ VALUES ("Classic DEV", "Pão brioche, carne suculenta e queijo derretido", 25.00
 ("Python Onion", "Anéis de cebola, barbecue e queijo cheddar.", 33.00, "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600"),
 ("React Salad", "Uma opção leve e reativa para o seu almoço.", 27.00, "https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=600");
 
-select * from usuario;
+INSERT INTO usuario (username, senha) VALUES 
+('davi', '123'),
+('morais', '2'),
+('dev', 'root');
+
+INSERT INTO carrinho (usuario, finalizado) VALUES 
+('davi', 0),    -- Carrinho do código 1
+('morais', 1),     -- Carrinho do código 2 (já finalizado)
+('dev', 0); -- Carrinho do código 3
+
+INSERT INTO itens_carrinho (cod_carrinho, cod_burguer, quantidade) VALUES 
+(1, 1, 2), 
+(1, 5, 1), 
+(2, 2, 1), 
+(3, 3, 1), 
+(3, 4, 1);
+
+select * from carrinho;
 drop database db_burguers;
+SELECT codigo, usuario FROM carrinho;
