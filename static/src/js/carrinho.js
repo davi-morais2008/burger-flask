@@ -13,7 +13,7 @@ btnFechar.addEventListener('click', () => {
 });
 
 async function  carregarCarrinho() {
-    const resposta = await fetch("http://10.110.134.2:8080/api/get/carrinho")
+    const resposta = await fetch("http://127.0.0.1:8080/api/get/carrinho")
 
     if (!resposta.ok){
         alert("ERRO AO CARREGAR CARRINHO!")
@@ -35,7 +35,7 @@ async function  carregarCarrinho() {
             let linha =  `
             <div class="cart-item">
                 <div class="cart-item__info">
-                    <p class="cart-item__name">${dado.nome}</p>
+                    <p class="cart-item__name">${dado.produto}</p>
                     <p class="cart-item__price">R$ ${dado.preco}</p>
                 </div>
                 <button class="cart-item__remove">Remover</button>

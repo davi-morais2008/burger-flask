@@ -47,7 +47,6 @@ def page_login():
 def login_post():
     user = request.form.get("nome")
     senha = request.form.get("senha")
-    
     if login(user, senha):
         session['usuario_logado'] = user
         return redirect("/")
@@ -64,7 +63,7 @@ def deslogar():
 @app.route("/api/get/carrinho")
 def api_get_carrinho():
     if "usuario_logado" in session:
-        carrinho = recuperar_carrinho(session["usuario_logado"]["codigo"])
+        carrinho = recuperar_carrinho(session["usuario_logado"])
         return jsonify(carrinho), 200
     else:
         return jsonify({"message": "Usuário não logado"}), 401
