@@ -133,7 +133,7 @@
 }
 
 .button--small{
-    display: block;
+    display: flex;
     text-decoration: none;
     color: black;
     background-color: var(--primary-orange);

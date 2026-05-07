@@ -50,7 +50,7 @@
         <div class="categories__list">
           <div class="category-item">
             <img src="{{produto.foto}}" alt="Lanche 1" class="category-item__img"/>
-            <a href="#lanche-1" class="button button--small">EU QUERO</a>
+            <button onclick="inserirItemCarrinho({{produto.codigo}})" class="button button--small">EU QUERO</button>
           </div>
           {% endif %}
           {% endfor %}
