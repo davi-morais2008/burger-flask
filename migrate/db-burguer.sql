@@ -58,6 +58,6 @@ INSERT INTO itens_carrinho (cod_carrinho, cod_burguer, quantidade) VALUES
 (3, 3, 1), 
 (3, 4, 1);
 
-select * from carrinho;
+select * from itens_carrinho;
 drop database db_burguers;
 SELECT codigo, usuario FROM carrinho;
