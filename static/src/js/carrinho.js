@@ -34,6 +34,7 @@ async function carregarCarrinho() {
                 <div class="cart-item__info">
                     <p class="cart-item__name">${dado.produto}</p>
                     <p class="cart-item__price">R$ ${dado.preco}</p>
+                    <p class="cart-item__price">Quantidade: ${dado.quantidade}</p>
                 </div>
                 <button class="cart-item__remove">Remover</button>
             </div>
@@ -52,7 +53,7 @@ async function inserirItemCarrinho(cod_produto, quantidade=1) {
                                                             headers: {"Content-Type": "application/json"}, 
                                                             body: JSON.stringify(
                                                                                     {
-                                                                                        "cod_produto": cod_produto,
+                                                                                        "codigo": cod_produto,
                                                                                         "quantidade": quantidade
                                                                                     }
                                                             )
@@ -61,12 +62,9 @@ async function inserirItemCarrinho(cod_produto, quantidade=1) {
     if(!resposta.ok){
         alert("Erroooo")
     }
-
+    carregarCarrinho();
 
 }
-
-
-
 
 carregarCarrinho()
 

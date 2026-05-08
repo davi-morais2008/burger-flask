@@ -71,9 +71,9 @@ def api_get_carrinho():
 @app.route("/api/post/carrinho", methods=["POST"])
 def api_add_carrinho():
     if "usuario_logado" in session:
-        usuario = session["usuario_logado"]["username"]
+        usuario = session["usuario_logado"]
         dados = request.get_json()
-        codigo_produto = dados.get("cod_produto")
+        codigo_produto = dados.get("codigo")
         quantidade = dados.get("quantidade")
 
         add_item(usuario, codigo_produto, quantidade)

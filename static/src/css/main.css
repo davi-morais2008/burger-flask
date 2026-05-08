@@ -116,6 +116,12 @@
     width: 200px;
     height: 250px;
     border: 1px solid rgb(215, 214, 214);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -133,7 +139,7 @@
 }
 
 .button--small{
-    display: flex;
+    display: block;
     text-decoration: none;
     color: black;
     background-color: var(--primary-orange);
@@ -260,9 +266,22 @@
 }
 
 .button--small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Roboto";
     font-size: 1rem;
-    padding: 5px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+
+    text-decoration: none;
+    color: black;
     background-color: var(--accent-light-orange);
+    border-radius: 10px;
+    padding: 6px 20px;
 }
 
 .button--primary{

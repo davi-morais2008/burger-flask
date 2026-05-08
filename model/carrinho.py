@@ -27,7 +27,9 @@ def add_item(usuario, cod_item, quantidade=1):
         cursor.execute("INSERT INTO carrinho (usuario) VALUES (%s);", (usuario,))
         codigo_carrinho = cursor.lastrowid
 
-        cursor.execute("INSERT INTO itens_carrinho (cod_carrinho, cod_burguer, quantidade) VALUES (%s, %s, %s)", (codigo_carrinho, cod_item, quantidade))
+    cursor.execute("INSERT INTO itens_carrinho (cod_carrinho, cod_burguer, quantidade) VALUES (%s, %s, %s)", (codigo_carrinho, cod_item, quantidade))
 
     conexao.commit()
     conexao.close()
+
+

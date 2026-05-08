@@ -50,7 +50,7 @@
         <div class="categories__list">
           <div class="category-item">
             <img src="{{produto.foto}}" alt="Lanche 1" class="category-item__img"/>
-            <button onclick="inserirItemCarrinho({{produto.codigo}})" class="button button--small">EU QUERO</button>
+            <button onclick="inserirItemCarrinho({{produto.codigo}})" class="button--small">EU QUERO</button>
           </div>
           {% endif %}
           {% endfor %}
@@ -81,7 +81,7 @@
                 {{produto.descricao}}
               </p>
               <div class="card__footer">
-                <span class="card__price">{{produto.preco}}</span>
+                <span class="card__price">R$ {{produto.preco}}</span>
                 <a href="/produto/{{produto.codigo}}"><button class="button button--small">Comprar</button></a>
               </div>
             </div>
